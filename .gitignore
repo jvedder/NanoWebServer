@@ -1,15 +1,10 @@
-# Output Folders and Files #
+#ignore the Setting Folder and Files
+/.settings/
+.classpath
+.project
+
+#ignore the build output folder
 /bin/
-/testbin/
-/dist/
-/build/
-sysProps.xml
-*.class
 
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# SVN from Google Code #
-.svn/
+#ignore the Java Docs output folder
+/doc/
