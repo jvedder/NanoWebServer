@@ -1,5 +1,6 @@
 package nanowebserver;
 
+import java.util.Date;
 import java.util.Random;
 
 import nanowebserver.nanohttpd.WebServer;
@@ -30,6 +31,12 @@ public class Main
         webServer.registerPage(new GenericPage("/xyz", "This is XYZ page."));
        
         webServer.run();
+    }
+    
+    public static String getTimeStamp()
+    {
+    	Date now = new Date();
+    	return String.format("%tD %tT", now, now);
     }
 
 }

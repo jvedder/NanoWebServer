@@ -1,5 +1,6 @@
 package nanowebserver.web;
 
+import nanowebserver.Main;
 import nanowebserver.nanohttpd.NanoHTTPD;
 import nanowebserver.nanohttpd.NanoHTTPD.IHTTPSession;
 import nanowebserver.nanohttpd.NanoHTTPD.Method;
@@ -26,6 +27,8 @@ public class HomePage implements WebPage
     @Override
     public Response serve(IHTTPSession session)
     {
+    	System.out.println(Main.getTimeStamp() + " Serving Home page.");
+    	
         StringBuilder sb = new StringBuilder();
 
         Template.addHeader(sb, session);
@@ -33,7 +36,7 @@ public class HomePage implements WebPage
 
         sb.append("<div class=\"clear\"/>\n");
         sb.append("<p>This is the home page</p>\n");
-        sb.append("<p>Other pages are /abc and /xyz</p>\n");
+        sb.append("<p>Other pages are <a href='/abc'>/abc</a> and <a href='/xyz'>/xyz</a></p>\n");
         
         sb.append("<p></p>\n");
         

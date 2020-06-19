@@ -1,5 +1,6 @@
 package nanowebserver.web;
 
+import nanowebserver.Main;
 import nanowebserver.nanohttpd.NanoHTTPD;
 import nanowebserver.nanohttpd.NanoHTTPD.IHTTPSession;
 import nanowebserver.nanohttpd.NanoHTTPD.Method;
@@ -32,6 +33,8 @@ public class GenericPage implements WebPage
     @Override
     public Response serve(IHTTPSession session)
     {
+    	System.out.println(Main.getTimeStamp() + " Serving " + uri);
+    	
         StringBuilder sb = new StringBuilder();
 
         Template.addHeader(sb, session);
