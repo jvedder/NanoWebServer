@@ -48,8 +48,9 @@ public class WebServer extends NanoHTTPD
         {
             System.err.println("Couldn't start server:" + ioe);
         }
-
-        System.out.println("Server started. Hit Enter to stop.");
+        
+        int port = this.getListeningPort();
+        System.out.println("Server started on port " + port + ". Hit Enter to stop.");
 
         try
         {
